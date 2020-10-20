@@ -1,0 +1,13 @@
+.main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background-color: coral;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
