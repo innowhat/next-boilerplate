@@ -1,0 +1,31 @@
+.container_small {
+  margin: 0 auto;
+  padding: 20px;
+  width: 50%;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  width: 70%;
+}
+
+.container_large {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .container_small {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .container_large {
+    width: 100%;
+  }
+}

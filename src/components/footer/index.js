@@ -1,12 +1,12 @@
 import styles from "./footer.module.css";
+import page_styles from "../../styles/page.module.css";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a href="#" target="_blank" rel="noopener noreferrer">
-        Powered by{" "}
-        <img src="/logo.svg" alt="Logo" className={styles.logo} width="100px" />
-      </a>
+      <section className={page_styles.container}>
+        <h1>Footer section</h1>
+      </section>
     </footer>
   );
 };
