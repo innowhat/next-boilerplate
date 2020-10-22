@@ -1,3 +1,4 @@
+import Card from "../components/card";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 import styles from "../styles/page.module.css";
@@ -6,6 +7,10 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
+      <section className={styles.container}>
+        <h1>CSS Grid Template</h1>
+        <Card />
+      </section>
       <section className={styles.container_small}>
         <h1 className={styles.title}>Small container content</h1>
         <p>
