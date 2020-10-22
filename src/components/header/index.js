@@ -1,11 +1,12 @@
 import styles from "./header.module.css";
 import page_styles from "../../styles/page.module.css";
+import Nav from "./nav";
 
-const Header = ({ position = "fixed" }) => {
+const Header = () => {
   return (
-    <header className={styles.header} style={{ position: position }}>
+    <header className={styles.header}>
       <section className={page_styles.container}>
-        <h1>Header section</h1>
+        <Nav />
       </section>
     </header>
   );

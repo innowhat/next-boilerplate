@@ -1,52 +1,31 @@
 import styles from "./card.module.css";
 
-const Card = () => {
+const Card = ({ data, error }) => {
+  if (error) return <div>{error.message}</div>;
+  if (!data) return <div>Loading...</div>;
+
+  const [cards, setCards] = React.useState(null);
+
+  React.useEffect(() => {
+    setCards(data);
+  }, []);
+
   return (
     <div className={styles.card}>
-      <article>
-        <img src="https://picsum.photos/600/400" alt="Sample photo" />
-        <div className={styles.text}>
-          <h3>Labore exercitation ut consequat sunt non ex.</h3>
-          <p>
-            veniam proident. Consectetur qui nulla culpa ex id anim in excepteur
-            amet excepteur elit pariatur.
-          </p>
-          <button href="#">Here's why</button>
-        </div>
-      </article>
-      <article>
-        <img src="https://picsum.photos/600/400" alt="Sample photo" />
-        <div className={styles.text}>
-          <h3>Labore exercitation ut consequat sunt non ex.</h3>
-          <p>
-            veniam proident. Consectetur qui nulla culpa ex id anim in excepteur
-            amet excepteur elit pariatur.
-          </p>
-          <button href="#">Here's why</button>
-        </div>
-      </article>{" "}
-      <article>
-        <img src="https://picsum.photos/600/400" alt="Sample photo" />
-        <div className={styles.text}>
-          <h3>Labore exercitation ut consequat sunt non ex.</h3>
-          <p>
-            veniam proident. Consectetur qui nulla culpa ex id anim in excepteur
-            amet excepteur elit pariatur.
-          </p>
-          <button href="#">Here's why</button>
-        </div>
-      </article>{" "}
-      <article>
-        <img src="https://picsum.photos/600/400" alt="Sample photo" />
-        <div className={styles.text}>
-          <h3>Labore exercitation ut consequat sunt non ex.</h3>
-          <p>
-            veniam proident. Consectetur qui nulla culpa ex id anim in excepteur
-            amet excepteur elit pariatur.
-          </p>
-          <button href="#">Here's why</button>
-        </div>
-      </article>{" "}
+      {cards &&
+        cards.map((card) => (
+          <article key={card.id}>
+            <img src={card.url} alt="Sample photo" />
+            <div className={styles.text}>
+              <h3>{card.title}</h3>
+              <p>
+                veniam proident. Consectetur qui nulla culpa ex id anim in
+                excepteur amet excepteur elit pariatur.
+              </p>
+              <button href="#">Here's why</button>
+            </div>
+          </article>
+        ))}
     </div>
   );
 };
